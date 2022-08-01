@@ -2,9 +2,7 @@ package ru.praktikum_services.qa_scooter;
 
 import org.openqa.selenium.By;
 
-public class MainPageLocators {
-    //-----------------
-    //QA
+public class Locators {
     //questions header
     public By questionsHeader = By.xpath(".//div[text()='Вопросы о важном']");
     //first question
@@ -39,6 +37,15 @@ public class MainPageLocators {
     public By questionEight = By.id("accordion__heading-7");
     //eighth answer
     public By answerEight = By.id("accordion__panel-7");
-    //------------------
+
+    //Order button top
+    public By topOrderButton = By.xpath(".//div[@class='Header_Header__214zg']//button[text()='Заказать']");
+
+    //Name
+    public By orderNameInput = By.xpath(".//div[@class='Order_Form__17u6u']//input[contains(@placeholder,'Имя')]");
+    //Surname
+    public By orderSurnameInput = By.xpath(".//div[@class='Order_Form__17u6u']//input[contains(@placeholder,'Фамилия')]");
+    //Address
+    public By orderAddressInput = By.xpath(".//div[@class='Order_Form__17u6u']//input[contains(@placeholder,'Адрес')]");
 
 }

@@ -9,7 +9,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class QuestionsChromeTests {
 
     private static WebDriver driver;
-    MainPageLocators locator = new MainPageLocators();
+    Locators locator = new Locators();
 
     @BeforeClass
     public static void setUp() {

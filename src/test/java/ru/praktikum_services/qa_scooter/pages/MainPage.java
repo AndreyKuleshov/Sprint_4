@@ -5,12 +5,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import ru.praktikum_services.qa_scooter.MainPageLocators;
+import ru.praktikum_services.qa_scooter.Locators;
 
 import java.time.Duration;
 
 public class MainPage {
-    MainPageLocators locator = new MainPageLocators();
+    Locators locator = new Locators();
     private final WebDriver driver;
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -19,6 +19,13 @@ public class MainPage {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator.questionsHeader));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(locator.questionsHeader));
+    }
+    public void waitUntilElementIsLoaded(By locator){
+        new WebDriverWait(driver, Duration.ofSeconds(3))
+                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    public void scrollToElement(By locator) {
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(locator));
     }
     public void clickElement(By locator) {
         driver.findElement(locator).click();

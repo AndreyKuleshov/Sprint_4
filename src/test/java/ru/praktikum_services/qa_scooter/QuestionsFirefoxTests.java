@@ -12,7 +12,7 @@ import ru.praktikum_services.qa_scooter.pages.MainPage;
 public class QuestionsFirefoxTests {
 
     private static WebDriver driver;
-    MainPageLocators locator = new MainPageLocators();
+    Locators locator = new Locators();
 
     @BeforeClass
     public static void setUp() {
