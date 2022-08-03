@@ -1,82 +1,43 @@
 package ru.praktikum_services.qa_scooter;
 
-import org.junit.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.Assert;
+import org.junit.Test;
 import ru.praktikum_services.qa_scooter.pages.MainPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class QuestionsChromeTests {
+public class QuestionsChromeTests extends BaseChromeTest {
 
-    private static WebDriver driver;
-    Locators locator = new Locators();
-
-    @BeforeClass
-    public static void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
-    @AfterClass
-    public static void teardown() {
-       driver.quit();
-    }
+    static MainPage mainPage = new MainPage(driver);
 
     @Test
     public void firstQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionOne);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerOne).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion1().answer1IsVisible());
     }
     @Test
     public void secondQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionTwo);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerTwo).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion2().answer2IsVisible());
     }
     @Test
     public void thirdQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionThree);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerThree).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion3().answer3IsVisible());
     }
     @Test
     public void fourthQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionFour);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerFour).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion4().answer4IsVisible());
     }
     @Test
     public void fifthQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionFive);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerFive).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion5().answer5IsVisible());
     }
     @Test
     public void sixthQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionSix);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerSix).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion6().answer6IsVisible());
     }
     @Test
     public void seventhQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionSeven);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerSeven).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion7().answer7IsVisible());
     }
     @Test
     public void eighthQuestionTest() {
-        MainPage mainpage = new MainPage(driver);
-        mainpage.waitForLoadAndScrollToQuestions();
-        mainpage.clickElement(locator.questionEight);
-        Assert.assertTrue("The text didn't show up" ,driver.findElement(locator.answerEight).isDisplayed());
+        Assert.assertTrue(mainPage.clickQuestion8().answer8IsVisible());
     }
-
 }

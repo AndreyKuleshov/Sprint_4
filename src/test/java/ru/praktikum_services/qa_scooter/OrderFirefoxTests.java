@@ -1,13 +1,13 @@
 package ru.praktikum_services.qa_scooter;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import ru.praktikum_services.qa_scooter.pages.MainPage;
 
 import static ru.praktikum_services.qa_scooter.TestData.*;
 
-public class OrderChromeTests extends BaseChromeTest {
+public class OrderFirefoxTests extends BaseFirefoxTest {
     MainPage page = new MainPage(driver);
+
     @Test
     public void topButtonOrderTest() {
         Assert.assertTrue(
