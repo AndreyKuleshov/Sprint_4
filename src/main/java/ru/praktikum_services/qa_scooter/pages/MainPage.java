@@ -1,10 +1,10 @@
 package ru.praktikum_services.qa_scooter.pages;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.time.Duration;
 
 public class MainPage {
 
@@ -155,9 +155,6 @@ public class MainPage {
         scrollToElement(bottomPlaceOrderButton);
         bottomPlaceOrderButton.click();
         return new OrderPage(driver);
-    }
-    public String getCurrentPageUrl() {
-        return driver.getCurrentUrl();
     }
     public String getMainPageUrl(){
         return MAIN_PAGE_URL;

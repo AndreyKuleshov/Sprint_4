@@ -1,6 +1,7 @@
 package ru.praktikum_services.qa_scooter;
 
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 import ru.praktikum_services.qa_scooter.pages.MainPage;
 
 import static ru.praktikum_services.qa_scooter.TestData.*;

@@ -6,7 +6,7 @@ import ru.praktikum_services.qa_scooter.pages.MainPage;
 
 import java.util.ArrayList;
 
-public class HeaderLogoClickTest extends BaseChromeTest {
+public class HeaderLogosClickTest extends BaseChromeTest {
     MainPage page = new MainPage(driver);
     @Test
     public void clickScooterLogoReturnToMainPageTest(){
